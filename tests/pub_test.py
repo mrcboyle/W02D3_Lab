@@ -13,8 +13,13 @@ class TestPub(unittest.TestCase):
 
     def test_pub_has_till(self):
         self.assertEqual(500.00, self.pub.till)
+    
+    def test_check_customer_age(self):
+        customer1 = Customer("Idris", 50.00, 19)
+        self.pub.check_customer_age(customer1)
+        self.assertEqual(True, self.pub.check_customer_age(customer1))
 
     def test_increase_till(self):
         drink1 = Drink("Guinness", 5.00)
         self.pub.increase_till(drink1.price)
-        self.assertEqual(505.00, self.pub.till) 
+        self.assertEqual(505.00, self.pub.till)

@@ -6,13 +6,20 @@ from src.pub import Pub
 class TestCustomer(unittest.TestCase):
 
     def setUp(self):
-        self.customer = Customer("Idris", 50.00)
+        self.customer = Customer("Idris", 50.00, 19)
 
     def test_customer_has_name(self):
         self.assertEqual("Idris", self.customer.name)
 
     def test_customer_has_wallet(self):
         self.assertEqual(50.00, self.customer.wallet)
+
+    def test_customer_has_age(self):
+        self.assertEqual(19, self.customer.age)
+    
+
+
+
 
     def test_decrease_wallet(self):
         drink1 = Drink("Guinness", 5.00)
@@ -25,3 +32,4 @@ class TestCustomer(unittest.TestCase):
         self.customer.buy_drink(pub1, drink1)
         self.assertEqual(45.00, self.customer.wallet)
         self.assertEqual(505.00, pub1.till)
+

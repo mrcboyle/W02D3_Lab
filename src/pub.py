@@ -6,3 +6,7 @@ class Pub:
 
     def increase_till(self, drink_price):
         self.till += drink_price
+
+    def check_customer_age(self, customer):
+        if customer.age >= 18:
+            return True
